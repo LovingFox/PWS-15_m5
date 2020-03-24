@@ -6,7 +6,7 @@
 </head>
    <body>
       <h1>Курочка ряба</h1>
-      <form>
+      <form id="make-form">
          <label for="var1">var1</label>
          <input type="text" id="var1" name="var1" placeholder="старик" value="старик">
          <label for="var2">var2</label>
@@ -21,9 +21,10 @@
          <input type="text" id="var6" name="var6" placeholder="хвостиком" value="хвостиком">
          <label for="speach">speach</label>
          <input type="text" id="speach" name="speach" placeholder="Не плачь дед, не плачь баба. Я снесу вам яичко другое, не золотое, а простое" value="Не плачь дед, не плачь баба. Я снесу вам яичко другое, не золотое, а простое">
-         <button id="butget">Создать</button>
+         <button id="make-button">Создать</button>
       </form>
-      <div id="result"></div>
+      <p id="status">Введите данные и нажмите "Создать"</p>
+      <p id="result"></p>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <script src="script.js"></script>
    </body>

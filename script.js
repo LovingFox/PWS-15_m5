@@ -2,14 +2,17 @@ const url = "https://api.myjson.com/bins/jcmhn";
 const vars=["var1", "var2", "var3", "var4", "var5", "var6", "speach"];
 
 function hButton(e) {
-  $.getJSON(url, makeText);
-  e.preventDefault();
+   $("#make-button").prop('disabled', true);
+   $("#status").html("Подождите, идут выполнение запроса и обработка данных...");
+   $("#result").html("");
+   $.getJSON(url, makeText);
+   e.preventDefault();
 }
 
 function makeText(data) {
    let d = {};
    vars.forEach(function(v) {
-      d[v] = $("input[name=" + v + "]")[0].value
+      d[v] = $("#" + v)[0].value
    });
    let res = "";
    data["text"].forEach(function(l) {
@@ -18,9 +21,11 @@ function makeText(data) {
       }
       res += l + "<br>";
    });
+   $("#status").html("Готово:");
    $("#result").html(res);
+   $("#make-button").prop('disabled', false);
 }
 
 $(document).ready(function() {
-   $("#butget").click(hButton);
+   $("#make-button").click(hButton);
 });
